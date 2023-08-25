@@ -1,0 +1,43 @@
+#Amstrong number of 3 digit number
+number = int(input())
+if (100<number<1000):
+    temp = number
+    add_sum = 0
+    while temp!= 0:
+        a = temp % 10
+        add_sum += a*a*a
+        temp = temp//10
+    if add_sum == number:
+        print('Yes')
+    else:
+        print('No')
+else:print('Not a 3 digit number')
+
+#2. find duplicate
+def findDuplicates(arr, Len):
+    ifPresent = False
+    a1 = []
+    for i in range(Len - 1):
+        for j in range(i + 1, Len):
+            if (arr[i] == arr[j]):
+                if arr[i] in a1:
+                    break
+                else:
+                    a1.append(arr[i])
+                    ifPresent = True
+    if (ifPresent):
+        print(a1, end = " ")
+    else:
+        print("No duplicates present in arrays")
+arr = [ 1, 2, 1, 1, 5, 6, 5, 10]
+n = len(arr)
+findDuplicates(arr, n)
+
+# Reverse Number
+num=int(input())
+reverse_number=0
+while num>0:
+    reminder=num%10
+    reverse_number=(reverse_number*10)+reminder
+    num=num//10
+print(reverse_number)
